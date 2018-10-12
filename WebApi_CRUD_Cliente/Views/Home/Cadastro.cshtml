@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro Cliente";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnCadastrar").click(function () {
+            $.ajax({
+                url: '@Url.Action("Cadastrar, Home")',
+                type: "POST",
+                contentType: "application/json",
+                data: { Dado: $("#txtNome").val() },
+                success: function (result) {
+                    alert(result)
+                },
+                error: function (xhr, exception) {
+                    alert("Erro ao efetuar cadastro.")
+                },
+
+            });
+        })
+    });
+</script>
+
+<div class="jumbotron">
+    <h2>Cadastro</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        
+         Código:<br>
+         <input type="text" id="txtCodigo" name="txtCodigo"><br>
+          Nome:<br>
+          <input type="text" id="txtNome" name="txtNome"><br><br>
+          Email:<br>
+          <input type="text" id="txtEmail" name="txtEmail"><br><br>
+          Telefone:<br>
+          <input type="text" id="txtTelefone" name="txtTelefone"><br><br>
+          Celular:<br>
+          <input type="text" id="txtCelular" name="txtCelular"><br><br>
+          <input type="submit" id="btnCadastrar" name="btnCadastrar" value="Enviar">
+    </div>
+</div>
+
+
