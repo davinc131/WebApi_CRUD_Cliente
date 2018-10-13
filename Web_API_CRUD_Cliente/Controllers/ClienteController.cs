@@ -39,11 +39,6 @@ namespace Web_API_CRUD_Cliente.Controllers
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCliente(int id, Cliente cliente)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
-
             if (id != cliente.ClienteID)
             {
                 return BadRequest();
@@ -74,11 +69,6 @@ namespace Web_API_CRUD_Cliente.Controllers
         [ResponseType(typeof(Cliente))]
         public IHttpActionResult PostCliente(Cliente cliente)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
-
             db.Cliente.Add(cliente);
             db.SaveChanges();
 
