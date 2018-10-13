@@ -6,13 +6,7 @@
 <div class="form-body">
     @using (Html.BeginForm())
     {
-        Html.HiddenFor(model => model.ClienteID);
-
-        <div style="visibility:hidden">
-            @Html.LabelFor(model => model.ClienteID)
-            @Html.EditorFor(model => model.ClienteID)
-            @Html.ValidationMessageFor(model => model.  ClienteID)
-        </div>
+        @Html.HiddenFor(model => model.ClienteID);
 
         <div class="form-group">
             @Html.LabelFor(model => model.Nome)
